@@ -24,7 +24,28 @@
         model-viewer { 
             width: 300px; 
             height: 400px; 
+            position: relative; /* Añadido para contener elementos absolutos */
         } 
+
+        /* Nuevos estilos para reposicionar la mano */
+        #ar-prompt {
+            position: absolute;
+            bottom: 120px; /* Ajusta esta valor para subir/bajar la mano */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        #ar-prompt img {
+            width: 80px; /* Opcional: ajustar tamaño de la mano */
+        }
+
+        /* Asegurar que el botón quede debajo */
+        #ar-button {
+            position: relative;
+            z-index: 2;
+            margin-top: 20px; /* Espacio adicional debajo de la mano */
+        }
     </style> 
 </head>
 <body>
