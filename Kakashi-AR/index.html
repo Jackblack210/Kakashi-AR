@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <title>Visor AR de Kakashi</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style> 
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        model-viewer { 
+            width: 400px; 
+            height: 400px; 
+        } 
+    </style> 
+</head>
+<body>
+    <h1>Modelo 3D de Callao Kakashi</h1>
+    
+    <model-viewer 
+        src="Kakashi.glb" 
+        ar 
+        ar-modes="webxr scene-viewer quick-look" 
+        camera-controls 
+        tone-mapping="neutral" 
+        poster="poster.webp" 
+        shadow-intensity="1" 
+        autoplay>
+        
+        <div class="progress-bar hide" slot="progress-bar">
+            <div class="update-bar"></div>
+        </div>
+
+        <button slot="ar-button" id="ar-button">
+            View in your space
+        </button>
+
+        <div id="ar-prompt">
+            <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+        </div>
+
+    </model-viewer>
+</body>
+</html>
